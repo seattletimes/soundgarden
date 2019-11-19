@@ -1,0 +1,23 @@
+{
+   "name": "Soundgarden",
+   "children": [
+   {
+   "name": "Chris Cornell",
+   "projects": [
+      {"name": "Audio Slave", "size": 3938},
+      {"name": "Temple of the Dog", "size": 3812},
+      {"name": "Alice Cooper", "size": 6714},
+      {"name": "Ramones", "size": 743}
+   ]
+   },
+   {
+   "name": "Kim Thayil",
+   "projects": [
+      {"name": "Probot", "size": 3938},
+      {"name": "Pearl Jam", "size": 3812},
+      {"name": "Johnny Cash", "size": 6714},
+      {"name": "Mother Love Bone", "size": 743}
+      ]
+   }
+   ]
+}
