@@ -7,7 +7,7 @@
       <%= t.include("partials/_gtm.html") %>
     <% } %>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- <script src='https://d3js.org/d3.v4.min.js'></script> -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
     <% if (json.project.production && !json.project.embedded) { %>
@@ -15,11 +15,10 @@
     <% } %>
     <responsive-child>
       <p>soundgarden</p>
-<!-- 
-      <h3>Today is a beautiful day!!</h3>
+
       <ul></ul>
-      <script>d3.select('h3').style('color', 'darkblue'); d3.select('h3').style('font-size', '24px');</script>
-      <script>var fruits = ['apple', 'mango', 'banana', 'orange']; d3.select('ul').selectAll('li').data(fruits).enter().append('li').text(function(d) { return d; });</script> -->
+
+      
     </responsive-child>
 
     <script src="app.js" async></script>

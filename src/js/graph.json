@@ -1,0 +1,89 @@
+{
+   "nodes": [
+   { "name": "Chris Cornell", "group": 2}, 
+   { "name": "Alice Cooper", "group": 3},
+   {"name": "Alice in Chains", "group": 3},
+   {"name": "Alice Mudgarden", "group": 3},
+   {"name": "Ann Wilson", "group": 3},
+   {"name": "Audio Slave", "group": 3},
+   {"name": "Guns N' Roses", "group": 3},
+   {"name": "Linkin Park", "group": 3},
+   {"name": "Michael Shrieve", "group": 3},
+   { "name": "Pearl Jam", "group": 3 },
+   {"name": "Ramones", "group": 3},
+   {"name": "Screaming Trees", "group": 3},   
+   {"name": "Slash", "group": 3},
+   {"name": "Temple of the Dog", "group": 3},
+   {"name": "Tom Morello", "group": 3},
+   {"name": "Zac Brown Band", "group": 3},
+   
+   { "name": "Kim Thayil", "group": 2 }, 
+   { "name": "Johnny Cash", "group": 3 },
+   {"name": "MC5", "group": 3},
+   { "name": "Probot", "group": 3 },
+   {"name": "The No W.T.O. Combo", "group": 3},   
+   {"name": "The Presidents of the United States of America", "group": 3},
+   {"name": "Wellwater Conspiracy", "group": 3},
+
+   { "name": "Hiro Yamamoto", "group": 2 }, 
+   { "name": "Truly" , "group": 3},
+
+   { "name": "Ben Shepherd", "group": 2}, 
+   { "name": "Queens of the Stone Age", "group": 3 },
+
+   { "name": "Matt Cameron", "group": 2}, 
+   {"name": "Janet Weiss (Sleater Kinney)", "group": 3},
+   {"name": "Skin Yard", "group": 3},
+   { "name": "Smashing Pumpkins", "group": 3},
+   {"name": "Tony Iommi (Black Sabbath)", "group": 3},   
+   { "name": "Soundgarden", "group": 1}
+   ],
+
+   "edges": [
+   { "source": 0, "target": 32 },
+   { "source": 0, "target":  1},
+   { "source": 0, "target":  2},
+   { "source": 0, "target":  3},
+   { "source": 0, "target":  4},
+   { "source": 0, "target":  5},
+   { "source": 0, "target":  6},
+   { "source": 0, "target":  7},
+   { "source": 0, "target":  8},
+   { "source": 0, "target":  9},
+   { "source": 0, "target":  10},
+   { "source": 0, "target":  11},
+   { "source": 0, "target":  12},
+   { "source": 0, "target":  13},
+   { "source": 0, "target":  14},
+   { "source": 0, "target":  15},
+
+   { "source": 16, "target": 32 },
+   { "source": 16, "target": 17 },
+   { "source": 16, "target": 18 },
+   { "source": 16, "target": 8 },
+   { "source": 16, "target": 9 },
+   { "source": 16, "target": 19 },
+   { "source": 16, "target": 20 },
+   { "source": 16, "target": 21 },
+   { "source": 16, "target": 22 },
+
+   { "source": 23, "target": 32 },   
+   { "source": 23, "target": 24 },
+
+   { "source": 25, "target": 32 },
+   { "source": 25, "target": 26 },
+   { "source": 25, "target": 10 },
+   { "source": 25, "target": 22 },
+
+   { "source": 27, "target": 32 },
+   { "source": 27, "target": 28 },
+   { "source": 27, "target": 9},
+   { "source": 27, "target": 29},
+   { "source": 27, "target": 30 },
+   { "source": 27, "target": 13},
+   { "source": 27, "target": 31 },
+   { "source": 27, "target": 22 }
+
+   ]
+  }
+  
