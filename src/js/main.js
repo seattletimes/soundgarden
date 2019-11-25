@@ -95,11 +95,10 @@ var node = svg.append("g")
         return d.group;
     })
     
-    
 var circles = node.append("circle")
     .attr("r", function(d){
-        if(d.group == 3){ return 80; }
-        else if (d.group == 2) { return 50; }
+        if(d.group == 3){ return 51.9615; }
+        else if (d.group == 2) { return 42.4264; }
         else return 30;
     } );
 
@@ -114,19 +113,16 @@ circles.attr("fill", function(d){
             .attr("y2", "100%");
 
         var members = d.member;
-        console.log(members);
         var length = members.length;
       
         var offset;
-            if(length == 2) {offset = ["0%", "100%"]; console.log(offset);}
-            else if (length == 3) {offset = ["0%", "33%", "100%"]; console.log(offset);}
+            if(length == 2) {offset = ["0%", "100%"];}
+            else if (length == 3) {offset = ["0%", "33%", "100%"];}
             else {offset = ["0%", "20%", "40%", "60%", "80%", "100%" ];}
         for(var x = 0; x < length; x++){
-            console.log("Member: " + members[x]);
             gradient.append("stop")
                 .attr("offset", offset[x])
                 .attr("stop-color", function(d){
-                    console.log(colors[members[x]]);
                     return colors[members[x]];
                 })
 
@@ -136,15 +132,27 @@ circles.attr("fill", function(d){
         }
 });
 
-node.append("text")
-    .text(function(d) {
-      return d.name;
+var text = node.append("text")
+    .attr("x", "0")
+    .attr("y", function(d) {
+        var lines = d.name.split("\n").length;
+        return -4 + (-9 * lines);
     })
     .attr("text-anchor", "middle");
 
 node.append("title")
     .text(function(d) { return d.name; });
 
+text.selectAll("tspan")
+    .data(function(d) {
+        console.log(d.name)
+        return d.name.split("\n");
+    })
+    .enter()
+    .append("tspan")
+    .text(d => d)
+    .attr("x", 0)
+    .attr("dy", 18);
 
 function tick() {
   link
