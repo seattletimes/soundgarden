@@ -9,38 +9,54 @@ var width = 960,
     height = 600;
 
 var colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"];
+var filterButtons = document.querySelectorAll(".filter-buttons")
+
+function filterByCategory(){
+    var selectedCategory = document.querySelector(".checked");
+    if(selectedCategory) {
+        var selected = parseInt(selectedCategory.dataset.category); 
+
+        circles.transition().duration(500).attr("fill-opacity", function(d){
+            var members = d.member;
+            if(members.indexOf(selected) == -1){
+                return ".3";
+            }
+        }); 
+        text.transition().duration(500).attr("fill-opacity", function(d){
+            var members = d.member;
+            if(members.indexOf(selected) == -1){
+                return ".3";
+            }
+        });
+    }
+    else{
+        circles.transition().duration(500).attr("fill-opacity", "1");
+        text.transition().duration(500).attr("fill-opacity", "1");
+    }
+}
 
 
-var filterButtons = document.querySelectorAll(".filter-buttons");
+
 function catButton() {
     if (this.classList.length == 1){
+      for(var x = 0; x < filterButtons.length; x++){
+            filterButtons[x].classList.remove("checked");
+            }
       this.classList.add("checked");
+    
     }
     else{
       this.classList.remove("checked");
-    }
-    filterByCategory(this.dataset.category);
+    }  filterByCategory();
   }
   
   function catlistener(){
     for(var x = 0; x < filterButtons.length; x++){
     filterButtons[x].addEventListener("click", catButton);
+    filterButtons[x].style.border = "2px solid" + colors[x];
     }
   }
   catlistener();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -86,15 +102,17 @@ var link = svg.append("g")
     .enter().append("line")
     .attr("stroke-width", 2);
 
-var node = svg.append("g")
+var nodes = svg.append("g")
     .attr("class", "nodes")
+
+
+var node = nodes
     .selectAll("g")
     .data(bandData.nodes)
     .enter().append("g")
     .attr("class", function(d){
         return d.group;
-    })
-    
+    })   
     
 var circles = node.append("circle")
     .attr("r", function(d){
@@ -114,19 +132,16 @@ circles.attr("fill", function(d){
             .attr("y2", "100%");
 
         var members = d.member;
-        console.log(members);
         var length = members.length;
       
         var offset;
-            if(length == 2) {offset = ["0%", "100%"]; console.log(offset);}
-            else if (length == 3) {offset = ["0%", "33%", "100%"]; console.log(offset);}
+            if(length == 2) {offset = ["0%", "100%"];}
+            else if (length == 3) {offset = ["0%", "33%", "100%"];}
             else {offset = ["0%", "20%", "40%", "60%", "80%", "100%" ];}
         for(var x = 0; x < length; x++){
-            console.log("Member: " + members[x]);
             gradient.append("stop")
                 .attr("offset", offset[x])
                 .attr("stop-color", function(d){
-                    console.log(colors[members[x]]);
                     return colors[members[x]];
                 })
 
@@ -136,11 +151,12 @@ circles.attr("fill", function(d){
         }
 });
 
-node.append("text")
+var text = node.append("text")
     .text(function(d) {
       return d.name;
     })
     .attr("text-anchor", "middle");
+ 
 
 node.append("title")
     .text(function(d) { return d.name; });

@@ -1,5 +1,10 @@
 @import "seattletimes";
 
+body{
+  width: 100%;
+  align-content: center;
+}
+
 .chart-head {
   font-size: 28px;
   text-align: center;
@@ -43,21 +48,22 @@
     
   
     button {
+
+        outline: 0;
+
       background-color: white;
         padding: 2px 8px;
-        border: 1px solid @df-light-gray;
-        color: @df-middle-gray;
+        
         border-radius: 10px;
         cursor: pointer;
         margin: 2px;
         font-size: 18px;
-        .filter-icon{
-          opacity: 40%;
-        }
+
+
       }
       .checked {
-        border: 1px solid @df-dark-gray;
-        color: @df-dark-gray;
+        opacity: .5;
+        outline: 0;
       }
     
     }
