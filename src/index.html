@@ -1,24 +1,45 @@
 <!doctype html>
 <html lang="en-US">
   <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Safari, you're the worst -->
+    <meta name='format-detection' content='telephone=no'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <%= t.include("partials/_head.html", grunt.data.json) %>
     <% if (json.project.production && !json.project.embedded) { %>
       <%= t.include("partials/_dataLayer.html") %>
       <%= t.include("partials/_gtm.html") %>
     <% } %>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
     <% if (json.project.production && !json.project.embedded) { %>
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
+
     <responsive-child>
-      <p>soundgarden</p>
+      <p class="chart-head">Soundgarden</p>
+      <div class="filters">
+          <% var members = [
+          { data: "chris-cornell", label: "Chris Cornell" },
+          { data: "kim-thayil", label: "Kim Thayil"},
+          { data: "hiro-yamamoto", label: "Hiro Yamamoto" },
+          { data: "ben-shepherd", label: "Ben Shepherd" },
+          { data: "matt-cameron", label: "Matt Cameron" },
+        ] %>
+        <ul class="categories">
+          <% members.forEach(function(member) { %>
+            <li>
+              <button type="button" class="filter-buttons" data-category="<%= member.data %>">
+                <span class="member-label"><%= member.label %></span>
+              </button>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
 
-      <ul></ul>
-
-      
     </responsive-child>
 
     <script src="app.js" async></script>

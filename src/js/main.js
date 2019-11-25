@@ -6,40 +6,78 @@ var d3 = require("d3");
 var bandData = require("./graph.json");
 
 var width = 960,
-    height = 900;
+    height = 600;
 
-var colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "yellow"];
+var colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"];
+
+
+var filterButtons = document.querySelectorAll(".filter-buttons");
+function catButton() {
+    if (this.classList.length == 1){
+      this.classList.add("checked");
+    }
+    else{
+      this.classList.remove("checked");
+    }
+    filterByCategory(this.dataset.category);
+  }
+  
+  function catlistener(){
+    for(var x = 0; x < filterButtons.length; x++){
+    filterButtons[x].addEventListener("click", catButton);
+    }
+  }
+  catlistener();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var force = d3.forceSimulation(bandData.nodes)
-    .force("charge", d3.forceManyBody().strength(-20))
+    // .force("charge", d3.forceManyBody().strength(-10))
+    .force("charge", d3.forceManyBody().strength(function(d){
+        if (d.group==3) {return -50}
+        else if(d.group == 2){return -35}
+        else {return -10}
+    }))
     .force("link", d3.forceLink(bandData.edges))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .on("tick", tick) ;
 
-var svg = d3.select("body").append("svg")
+// var attractForce = d3.forceManyBody()
+//     .strength(-35)
+//     .distanceMax(400)
+//     .distanceMin(30);
+
+// var collisionForce = d3.forceCollide().radius(function(d) {
+//     return d.radius
+//     });
+    // .strength(1)
+    // .iterations(100);
+
+
+var svg = d3.select("responsive-child").append("svg")
     .attr("width", width)
     .attr("height", height);
 
 var defs = svg.append("defs");
-
-var gradient = defs.append("linearGradient")
-    .attr("id", "svgGradient")
-    .attr("x1", "40%")
-    .attr("x2", "100%")
-    .attr("y1", "0%")
-    .attr("y2", "100%");
-
-gradient.append("stop")
-    .attr('class', 'start')
-    .attr("offset", "0%")
-    .attr("stop-color", "orange")
-    .attr("stop-opacity", 1);
-
-gradient.append("stop")
-    .attr('class', 'end')
-    .attr("offset", "100%")
-    .attr("stop-color", "blue")
-    .attr("stop-opacity", 1);
 
 var link = svg.append("g")
     .attr("class", "links")
@@ -61,19 +99,44 @@ var node = svg.append("g")
 var circles = node.append("circle")
     .attr("r", function(d){
         if(d.group == 3){ return 80; }
-        else if (d.group == 2) { return 60; }
+        else if (d.group == 2) { return 50; }
         else return 30;
     } );
-    // .attr("border", "10px solid")
-    // .attr("border-image", "conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1");
-    
-    
+
 circles.attr("fill", function(d){
     if(d.member<5) return colors[d.member];
-    else return "url(#svgGradient)";
+    else {
+        var gradient = defs.append("linearGradient")
+            .attr("id", "svgGradient" + d.member)
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("y1", "0%")
+            .attr("y2", "100%");
+
+        var members = d.member;
+        console.log(members);
+        var length = members.length;
+      
+        var offset;
+            if(length == 2) {offset = ["0%", "100%"]; console.log(offset);}
+            else if (length == 3) {offset = ["0%", "33%", "100%"]; console.log(offset);}
+            else {offset = ["0%", "20%", "40%", "60%", "80%", "100%" ];}
+        for(var x = 0; x < length; x++){
+            console.log("Member: " + members[x]);
+            gradient.append("stop")
+                .attr("offset", offset[x])
+                .attr("stop-color", function(d){
+                    console.log(colors[members[x]]);
+                    return colors[members[x]];
+                })
+
+        }
+
+        return "url(#svgGradient"+d.member+")";
+        }
 });
 
-var lables = node.append("text")
+node.append("text")
     .text(function(d) {
       return d.name;
     })
@@ -81,10 +144,6 @@ var lables = node.append("text")
 
 node.append("title")
     .text(function(d) { return d.name; });
-
-
-
-
 
 
 function tick() {
