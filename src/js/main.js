@@ -113,11 +113,12 @@ var node = nodes
     .attr("class", function(d){
         return d.group;
     })   
+
     
 var circles = node.append("circle")
     .attr("r", function(d){
-        if(d.group == 3){ return 80; }
-        else if (d.group == 2) { return 50; }
+        if(d.group == 3){ return 51.9615; }
+        else if (d.group == 2) { return 42.4264; }
         else return 30;
     } );
 
@@ -152,15 +153,26 @@ circles.attr("fill", function(d){
 });
 
 var text = node.append("text")
-    .text(function(d) {
-      return d.name;
-    })
-    .attr("text-anchor", "middle");
+    .attr("x", "0")
+    .attr("y", function(d) {
+        var lines = d.name.split("\n").length;
+        return -4 + (-9 * lines);
+    });
  
 
 node.append("title")
     .text(function(d) { return d.name; });
 
+text.selectAll("tspan")
+    .data(function(d) {
+        console.log(d.name)
+        return d.name.split("\n");
+    })
+    .enter()
+    .append("tspan")
+    .text(d => d)
+    .attr("x", 0)
+    .attr("dy", 18);
 
 function tick() {
   link
