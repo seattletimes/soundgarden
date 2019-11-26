@@ -19,7 +19,7 @@
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
 
-    <responsive-child>
+    <div id="graphic-container">
       <p class="chart-head">Soundgarden</p>
       <div class="filters">
           <% var members = [
@@ -40,7 +40,7 @@
         </ul>
       </div>
 
-    </responsive-child>
+    </div>
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

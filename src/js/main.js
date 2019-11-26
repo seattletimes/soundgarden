@@ -1,7 +1,6 @@
 // var paywall = require("./lib/paywall");
 // setTimeout(() => paywall(12345678), 5000);
 
-require("component-responsive-frame/child");
 var d3 = require("d3");
 var bandData = require("./graph.json");
 
@@ -89,7 +88,7 @@ var force = d3.forceSimulation(bandData.nodes)
     // .iterations(100);
 
 
-var svg = d3.select("responsive-child").append("svg")
+var svg = d3.select("#graphic-container").append("svg")
     .attr("width", width)
     .attr("height", height);
 
