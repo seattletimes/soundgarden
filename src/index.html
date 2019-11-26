@@ -22,21 +22,24 @@
     <responsive-child>
       <div class="content">
       <p class="chart-head">Soundgarden</p>
-      <p class="chatter">The members of Soundgarden have toured, recorded and written for some of rock's most notable names. Click on the band members below to explore their creative connections. </p>
+      <p class="chatter">The members of Soundgarden have recorded, written, and performed with some of the most notable figures in rock. These collaborations differ in genre and involvement. Matt Cameron has been the drummer of Pearl Jam for over a decade, while Chris Cornell and Santana recorded only one song together, a cover of Led Zeppelin’s “Whole Lotta Love”. Members of Soundgarden have forged eclectic connections throughout the music industry emphasizing the skilled and sought after nature of their band.
+          <br><br>Click through the band members below to explore more of Soundgarden’s connections.
+      </p>
       <svg id="legend"></svg>
       <div class="filters">
           <% var members = [
-          { data: 0, label: "Chris Cornell" },
-          { data: 1, label: "Kim Thayil"},
-          { data: 2, label: "Hiro Yamamoto" },
-          { data: 3, label: "Ben Shepherd" },
-          { data: 4, label: "Matt Cameron" },
+          { data: 0, label: "Chris Cornell", role: "Vocals" },
+          { data: 1, label: "Kim Thayil", role: "Lead Guitar"},
+          { data: 2, label: "Hiro Yamamoto", role: "Bass Guitar" },
+          { data: 3, label: "Ben Shepherd", role: "Bass Guitar" },
+          { data: 4, label: "Matt Cameron", role:"Drums" },
         ] %>
         <ul class="categories">
           <% members.forEach(function(member) { %>
             <li>
               <button type="button" class="filter-buttons" data-category="<%= member.data %>">
-                <span class="member-label"><%= member.label %></span>
+                <span class="member-label"><%= member.label %><br><span class="member-label-role"><%= member.role %></span></span>
+                
               </button>
             </li>
           <% }) %>

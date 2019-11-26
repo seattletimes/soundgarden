@@ -26,6 +26,7 @@
    { "name": "Truly" , "group": 1, "member": [2] },
    {  "name": "Queens\nof the\nStone Age", "group": 2 , "member": [3, 4]  },
    {"name": "Janet Weiss \n(Sleater Kinney)", "group": 1, "member": [4]  },
+   { "name": "Santana", "group": 1, "member": [0] },
    {"name": "Skin Yard", "group": 2 , "member": [0, 4] },
    { "name": "Smashing\nPumpkins", "group": 1 , "member": [4]},
    {"name": "Tony Iommi \n(Black Sabbath)", "group": 1, "member": [4] }
