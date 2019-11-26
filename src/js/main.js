@@ -56,13 +56,17 @@ function catButton() {
   catlistener();
 
 var force = d3.forceSimulation(bandData.nodes)
+    .force("charge", d3.forceManyBody())
     .force("charge", d3.forceManyBody().strength(function(d){
-        if (d.group==3) {return -50}
-        else if(d.group == 2){return -35}
-        else {return -15}
+        if (d.group==3) {return -35}
+        else if(d.group == 2){return -20}
+        else {return -25}
     }))
+    // .force ("distanceMin", "10px")
+    // .force("distanceMax", "20px")
     .force("link", d3.forceLink(bandData.edges))
     .force("center", d3.forceCenter(width / 2, height / 2))
+    //.force("collide", d3.forceCollide().radius(.005).strength(0))
     .on("tick", tick) ;
 
 // var attractForce = d3.forceManyBody()
