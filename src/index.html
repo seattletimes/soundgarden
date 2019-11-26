@@ -20,29 +20,31 @@
     <% } %>
 
     <responsive-child>
-      <div id="graphic-container">
-        <p class="chart-head">Soundgarden</p>
-        <div class="filters">
-            <% var members = [
-            { data: 0, label: "Chris Cornell" },
-            { data: 1, label: "Kim Thayil"},
-            { data: 2, label: "Hiro Yamamoto" },
-            { data: 3, label: "Ben Shepherd" },
-            { data: 4, label: "Matt Cameron" },
-          ] %>
-          <ul class="categories">
-            <% members.forEach(function(member) { %>
-              <li>
-                <button type="button" class="filter-buttons" data-category="<%= member.data %>">
-                  <span class="member-label"><%= member.label %></span>
-                </button>
-              </li>
-            <% }) %>
-          </ul>
-        </div>
-
+      <div class="content">
+      <p class="chart-head">Soundgarden</p>
+      <p class="chatter">The members of Soundgarden have toured, recorded and written for some of rock's most notable names. Click on the band members below to explore their creative connections. </p>
+      <div class="filters">
+          <% var members = [
+          { data: 0, label: "Chris Cornell" },
+          { data: 1, label: "Kim Thayil"},
+          { data: 2, label: "Hiro Yamamoto" },
+          { data: 3, label: "Ben Shepherd" },
+          { data: 4, label: "Matt Cameron" },
+        ] %>
+        <ul class="categories">
+          <% members.forEach(function(member) { %>
+            <li>
+              <button type="button" class="filter-buttons" data-category="<%= member.data %>">
+                <span class="member-label"><%= member.label %></span>
+              </button>
+            </li>
+          <% }) %>
+        </ul>
       </div>
-      <img width="290px" src="./assets/legend.png">
+      <div class="svg-container"></div>
+
+    </div>
+    <img width="290px" src="./assets/legend.png">
       <p>Source: Times reporting.</p>
       <p>MIRANDA HARDY/THE SEATTLE TIMES</p>
     </responsive-child>
