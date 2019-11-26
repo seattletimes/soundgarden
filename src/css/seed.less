@@ -1,9 +1,11 @@
 @import "seattletimes";
 
-body{
-  width: 100%;
-  align-content: center;
+.chatter{
+  padding: 0;
+  max-width: 630px;
+  margin: auto;
 }
+
 
 .chart-head {
   font-size: 28px;
@@ -13,6 +15,10 @@ body{
   margin: 10px 0;
 }
   
+.svg-container{
+  text-align: center;
+  background-color: #232323;
+}
   text {
     font-family: @df-sans;
     font-size: 16px;
@@ -50,12 +56,9 @@ body{
     
   
     button {
-
-        outline: 0;
-
-      background-color: white;
+      outline: 0;
+       background-color: white;
         padding: 2px 8px;
-        
         border-radius: 10px;
         cursor: pointer;
         margin: 2px;

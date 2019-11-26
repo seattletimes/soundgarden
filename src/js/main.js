@@ -5,7 +5,7 @@ require("component-responsive-frame/child");
 var d3 = require("d3");
 var bandData = require("./graph.json");
 
-var width = 960,
+var width = 860,
     height = 600;
 
 var colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"];
@@ -35,15 +35,12 @@ function filterByCategory(){
     }
 }
 
-
-
 function catButton() {
     if (this.classList.length == 1){
       for(var x = 0; x < filterButtons.length; x++){
             filterButtons[x].classList.remove("checked");
             }
       this.classList.add("checked");
-    
     }
     else{
       this.classList.remove("checked");
@@ -58,20 +55,11 @@ function catButton() {
   }
   catlistener();
 
-
-
-
-
-
-
-
-
 var force = d3.forceSimulation(bandData.nodes)
-    // .force("charge", d3.forceManyBody().strength(-10))
     .force("charge", d3.forceManyBody().strength(function(d){
         if (d.group==3) {return -50}
         else if(d.group == 2){return -35}
-        else {return -10}
+        else {return -15}
     }))
     .force("link", d3.forceLink(bandData.edges))
     .force("center", d3.forceCenter(width / 2, height / 2))
@@ -89,7 +77,7 @@ var force = d3.forceSimulation(bandData.nodes)
     // .iterations(100);
 
 
-var svg = d3.select("responsive-child").append("svg")
+var svg = d3.select(".svg-container").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -157,7 +145,8 @@ var text = node.append("text")
     .attr("y", function(d) {
         var lines = d.name.split("\n").length;
         return -4 + (-9 * lines);
-    });
+    })
+    .attr("text-anchor", "middle");
  
 
 node.append("title")
@@ -165,7 +154,6 @@ node.append("title")
 
 text.selectAll("tspan")
     .data(function(d) {
-        console.log(d.name)
         return d.name.split("\n");
     })
     .enter()

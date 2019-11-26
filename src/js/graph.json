@@ -14,22 +14,21 @@
    {"name": "Ramones", "group": 2, "member": [0, 3]  },
    {"name": "Screaming Trees", "group": 1, "member":[0] },   
    {"name": "Slash", "group": 1, "member":[0] },
-   {"name": "Temple of the Dog", "group": 1 , "member":[0, 4] },
+   {"name": "Temple of\nthe Dog", "group": 1 , "member":[0, 4] },
    {"name": "Tom Morello", "group": 1, "member":[0] },
    {"name": "Zac Brown Band", "group": 1, "member":[0] }, 
    { "name": "Johnny Cash", "group": 1, "member": [1]  },
    {"name": "MC5", "group": 1, "member": [1] },
-   {"name": "Mother Love Bone", "group": 1, "member": [1]},
+   {"name": "Mother Love\nBone", "group": 1, "member": [1]},
    { "name": "Probot", "group": 1, "member": [1]  },
-   {"name": "The Presidents \nof the United States \nof America", "group": 1, "member": [1] },
+   {"name": "The Presidents of \nthe United States \nof America", "group": 1, "member": [1] },
    {"name": "Wellwater\nConspiracy", "group": 3, "member": [1, 3, 4]  },
    { "name": "Truly" , "group": 1, "member": [2] },
    {  "name": "Queens\nof the\nStone Age", "group": 2 , "member": [3, 4]  },
    {"name": "Janet Weiss \n(Sleater Kinney)", "group": 1, "member": [4]  },
    {"name": "Skin Yard", "group": 2 , "member": [0, 4] },
-   { "name": "Smashing Pumpkins", "group": 1 , "member": [4]},
-   {"name": "Tony Iommi \n(Black Sabbath)", "group": 1, "member": [4] },   
-   { "name": "Soundgarden", "group": 1, "member": [0,1,2,3,4]  }
+   { "name": "Smashing\nPumpkins", "group": 1 , "member": [4]},
+   {"name": "Tony Iommi \n(Black Sabbath)", "group": 1, "member": [4] }
    ],
 
    "edges": [
