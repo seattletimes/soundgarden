@@ -19,28 +19,33 @@
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
 
-    <div id="graphic-container">
-      <p class="chart-head">Soundgarden</p>
-      <div class="filters">
-          <% var members = [
-          { data: 0, label: "Chris Cornell" },
-          { data: 1, label: "Kim Thayil"},
-          { data: 2, label: "Hiro Yamamoto" },
-          { data: 3, label: "Ben Shepherd" },
-          { data: 4, label: "Matt Cameron" },
-        ] %>
-        <ul class="categories">
-          <% members.forEach(function(member) { %>
-            <li>
-              <button type="button" class="filter-buttons" data-category="<%= member.data %>">
-                <span class="member-label"><%= member.label %></span>
-              </button>
-            </li>
-          <% }) %>
-        </ul>
-      </div>
+    <responsive-child>
+      <div id="graphic-container">
+        <p class="chart-head">Soundgarden</p>
+        <div class="filters">
+            <% var members = [
+            { data: 0, label: "Chris Cornell" },
+            { data: 1, label: "Kim Thayil"},
+            { data: 2, label: "Hiro Yamamoto" },
+            { data: 3, label: "Ben Shepherd" },
+            { data: 4, label: "Matt Cameron" },
+          ] %>
+          <ul class="categories">
+            <% members.forEach(function(member) { %>
+              <li>
+                <button type="button" class="filter-buttons" data-category="<%= member.data %>">
+                  <span class="member-label"><%= member.label %></span>
+                </button>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
 
-    </div>
+      </div>
+      <img width="290px" src="./assets/legend.png">
+      <p>Source: Times reporting.</p>
+      <p>MIRANDA HARDY/THE SEATTLE TIMES</p>
+    </responsive-child>
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
