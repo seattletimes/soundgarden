@@ -92,4 +92,26 @@
     li {
       display: inline-block;
     }
-  }             
+  }
+
+.footer {
+  font-family: @df-sans;
+  font-size: 14px;
+  clear: both;
+  color: @df-middle-gray;
+  p {
+    margin: 5px;
+  }
+  .source {
+    font-style: italic;
+    @media (min-width: 400px) {
+      float: left;
+    }
+  }
+  .credit {
+    text-transform: uppercase;
+    @media (min-width: 400px) {
+      float: right;
+    }
+  }
+}
