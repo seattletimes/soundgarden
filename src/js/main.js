@@ -140,9 +140,7 @@ var node = nodes
     
 var circles = node.append("circle")
     .attr("r", function(d){
-        if(d.group == 3){ return 51.9615; }
-        else if (d.group == 2) { return 42.4264; }
-        else return 30;
+        return scale(d.group);
     } );
 
 circles.attr("fill", function(d){
