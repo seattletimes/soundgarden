@@ -3,9 +3,15 @@
 .chatter{
   padding: 0;
   max-width: 630px;
-  margin: auto;
+  margin: 14px auto;
+  font-family: @df-sans;
+  font-size: 15px;
 }
 
+#legend {
+  display: block;
+  margin: 10px auto;
+}
 
 .chart-head {
   font-size: 28px;
@@ -20,12 +26,19 @@
   background-color: #232323;
   width: 100%;
 }
-  text {
-    font-family: @df-sans;
-    font-size: 16px;
-    fill: #ffffff;
-    font-weight: bold;
-  }
+
+.legend-labels {
+  font-family: @df-sans;
+  font-size: 15px;
+  fill: #111;
+}
+
+.bubble-labels {
+  font-family: @df-sans;
+  font-size: 16px;
+  fill: #ffffff;
+  font-weight: bold;
+}
   
   line.link {
     fill: none;
@@ -53,6 +66,7 @@
       .member-label-role{
         font-style: italic;
         color: #6e6e6e;
+        font-size: 15px;
       }
       label {
         display: block;
@@ -79,4 +93,26 @@
     li {
       display: inline-block;
     }
-  }             
+  }
+
+.footer {
+  font-family: @df-sans;
+  font-size: 14px;
+  clear: both;
+  color: @df-middle-gray;
+  p {
+    margin: 5px;
+  }
+  .source {
+    font-style: italic;
+    @media (min-width: 400px) {
+      float: left;
+    }
+  }
+  .credit {
+    text-transform: uppercase;
+    @media (min-width: 400px) {
+      float: right;
+    }
+  }
+}

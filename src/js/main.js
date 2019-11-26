@@ -5,11 +5,46 @@ require("component-responsive-frame/child");
 var d3 = require("d3");
 var bandData = require("./graph.json");
 
+var legendValues = [1, 2, 3],
+    legendLabels = ["1", "2", "Band worked with 3 Soundgarden members"],
+    legendHeight = 120,
+    legendWidth = 290;
+
+var scale = d3.scaleSqrt()
+    .domain([1, 3])
+    .range([30, 50]);
+
 var width = 860,
     height = 600;
 
 var colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"];
 var filterButtons = document.querySelectorAll(".filter-buttons")
+
+var legend = d3.select("#legend")
+    .attr("width", legendWidth)
+    .attr("height", legendHeight)
+
+legend.selectAll("circle")
+    .data(legendValues)
+    .enter()
+    .append("circle")
+    .attr("cx", "50%")
+    .attr("cy", function(d) {return legendHeight - scale(d);})
+    .attr("r", function(d) {return scale(d)})
+    .style("fill", "none")
+    .attr("stroke", "#999");
+
+legend.selectAll("text")
+    .data(legendLabels)
+    .enter()
+    .append("text")
+    .text(function(d) {return d})
+    .attr("text-anchor", "middle")
+    .attr("x", "50%")
+    .attr("y", function(d, i) {
+        return legendHeight - 2 * scale(i + 1) - 3;
+    })
+    .attr("class", "legend-labels");
 
 function filterByCategory(){
     var selectedCategory = document.querySelector(".checked");
@@ -109,9 +144,7 @@ var node = nodes
     
 var circles = node.append("circle")
     .attr("r", function(d){
-        if(d.group == 3){ return 51.9615; }
-        else if (d.group == 2) { return 42.4264; }
-        else return 30;
+        return scale(d.group);
     } );
 
 circles.attr("fill", function(d){
@@ -150,8 +183,8 @@ var text = node.append("text")
         var lines = d.name.split("\n").length;
         return -4 + (-9 * lines);
     })
-    .attr("text-anchor", "middle");
- 
+    .attr("text-anchor", "middle")
+    .attr("class", "bubble-labels");
 
 node.append("title")
     .text(function(d) { return d.name; });
