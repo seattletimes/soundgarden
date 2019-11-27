@@ -16,7 +16,6 @@
   "post_id": 0,
   "image": "assets/social.jpg",
   "sheets": [],
-  "standout": false,
   "embedded": true,
-  "production": false
+  "production": true
 }
