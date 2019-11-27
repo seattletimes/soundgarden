@@ -88,8 +88,7 @@ function catButton() {
     filterButtons[x].style.border = "2px solid" + colors[x];
     }
   }
-  catlistener();
-
+catlistener();
 
 
 var force = d3.forceSimulation(bandData.nodes)
@@ -225,8 +224,7 @@ function tick() {
             return "translate(" + d.mobile_cx + "," + d.mobile_cy + ")";
         }
       })
-
-
+      
       svg
       .attr("width", function() {
           if (window.innerWidth > 600) {
@@ -242,9 +240,6 @@ function tick() {
               return 730;
           }
       });
-}
-
-
 
 window.addEventListener('resize', tick );
 
