@@ -224,7 +224,8 @@ function tick() {
             return "translate(" + d.mobile_cx + "," + d.mobile_cy + ")";
         }
       })
-      
+
+
       svg
       .attr("width", function() {
           if (window.innerWidth > 600) {
@@ -240,6 +241,9 @@ function tick() {
               return 730;
           }
       });
+}
+
+
 
 window.addEventListener('resize', tick );
 
