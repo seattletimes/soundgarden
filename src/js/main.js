@@ -90,18 +90,16 @@ function catButton() {
   }
   catlistener();
 
+
+
 var force = d3.forceSimulation(bandData.nodes)
-    // .force("charge", d3.forceManyBody())
     .force("charge", d3.forceManyBody().strength(function(d){
         return (-1*d.radius)/2;
     }))
-    // .force ("distanceMin", "10px")
-    // .force("distanceMax", "20px")
     .force("link", d3.forceLink(bandData.edges))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("collide", d3.forceCollide().radius(function(d) {
          return d.radius + 0.5; }).iterations(0))
-    //.force("collide", d3.forceCollide().radius(.005).strength(0))
     .on("tick", tick) ;
 
 var svg = d3.select(".svg-container").append("svg")
@@ -172,7 +170,6 @@ showCircles
         } else if (length == 3) {
             offset = [["0%", "33%"], ["33%", "66%"], ["66%","100%"]];
         }
-        console.log(offset);
 
         for(var x = 0; x < length; x++){
             for(var y = 0; y<2; y++){
@@ -212,6 +209,7 @@ text.selectAll("tspan")
     .attr("x", 0)
     .attr("dy", 18);
 
+
 function tick() {
   link
       .attr("x1", function(d) { return d.source.x; })
@@ -227,9 +225,27 @@ function tick() {
             return "translate(" + d.mobile_cx + "," + d.mobile_cy + ")";
         }
       })
+
+
+      svg
+      .attr("width", function() {
+          if (window.innerWidth > 600) {
+              return width;
+          } else {
+              return 320;
+          }
+      })
+      .attr("height", function() {
+          if (window.innerWidth > 600) {
+              return height;
+          } else {
+              return 730;
+          }
+      });
 }
 
 
 
+window.addEventListener('resize', tick );
 
 
