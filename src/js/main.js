@@ -51,7 +51,7 @@ function filterByCategory(){
     if(selectedCategory) {
         var selected = parseInt(selectedCategory.dataset.category); 
 
-        circles.transition().duration(500).attr("fill-opacity", function(d){
+        showCircles.transition().duration(500).attr("fill-opacity", function(d){
             var members = d.member;
             if(members.indexOf(selected) == -1){
                 return ".3";
@@ -65,7 +65,7 @@ function filterByCategory(){
         });
     }
     else{
-        circles.transition().duration(500).attr("fill-opacity", "1");
+        showCircles.transition().duration(500).attr("fill-opacity", "1");
         text.transition().duration(500).attr("fill-opacity", "1");
     }
 }
@@ -91,30 +91,18 @@ function catButton() {
   catlistener();
 
 var force = d3.forceSimulation(bandData.nodes)
-    .force("charge", d3.forceManyBody())
+    // .force("charge", d3.forceManyBody())
     .force("charge", d3.forceManyBody().strength(function(d){
-        if (d.group==3) {return -35}
-        else if(d.group == 2){return -20}
-        else {return -25}
+        return (-1*d.radius)/2;
     }))
     // .force ("distanceMin", "10px")
     // .force("distanceMax", "20px")
     .force("link", d3.forceLink(bandData.edges))
     .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collide", d3.forceCollide().radius(function(d) {
+         return d.radius + 0.5; }).iterations(0))
     //.force("collide", d3.forceCollide().radius(.005).strength(0))
     .on("tick", tick) ;
-
-// var attractForce = d3.forceManyBody()
-//     .strength(-35)
-//     .distanceMax(400)
-//     .distanceMin(30);
-
-// var collisionForce = d3.forceCollide().radius(function(d) {
-//     return d.radius
-//     });
-    // .strength(1)
-    // .iterations(100);
-
 
 var svg = d3.select(".svg-container").append("svg")
     .attr("width", width)
@@ -141,41 +129,54 @@ var node = nodes
         return d.group;
     })   
 
+var hideCircles = node.append("circle")
+    .attr("r", function(d){
+        return d.radius;
+    })
+    .attr("fill", "none");
     
-var circles = node.append("circle")
+var showCircles = node.append("circle")
     .attr("r", function(d){
         return scale(d.group);
     } );
 
-circles.attr("fill", function(d){
-    if(d.member<5) return colors[d.member];
+showCircles
+    .attr("fill", function(d){
+    if(d.member.length==1) return colors[d.member];
     else {
         var gradient = defs.append("linearGradient")
             .attr("id", "svgGradient" + d.member)
             .attr("x1", "0%")
             .attr("x2", "100%")
             .attr("y1", "0%")
-            .attr("y2", "100%");
+            .attr("y2", "0%");
 
         var members = d.member;
         var length = members.length;
-      
-        var offset;
-            if(length == 2) {offset = ["0%", "100%"];}
-            else if (length == 3) {offset = ["0%", "33%", "100%"];}
-            else {offset = ["0%", "20%", "40%", "60%", "80%", "100%" ];}
+
+        var offset = [];
+        if (length == 2) {
+            offset = [["0%", "50%"], ["50%","100%"]];
+        } else if (length == 3) {
+            offset = [["0%", "33%"], ["33%", "66%"], ["66%","100%"]];
+        }
+        console.log(offset);
+
         for(var x = 0; x < length; x++){
+            for(var y = 0; y<2; y++){
+            
             gradient.append("stop")
-                .attr("offset", offset[x])
+                .attr("offset", offset[x][y])
                 .attr("stop-color", function(d){
                     return colors[members[x]];
                 })
-
+            }
         }
-
         return "url(#svgGradient"+d.member+")";
         }
-});
+    });
+
+
 
 var text = node.append("text")
     .attr("x", "0")
