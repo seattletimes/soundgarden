@@ -14,7 +14,7 @@ var scale = d3.scaleSqrt()
     .domain([1, 3])
     .range([30, 50]);
 
-var width = 860,
+var width = 600,
     height = 600;
 
 var colors = ["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"];
@@ -105,8 +105,20 @@ var force = d3.forceSimulation(bandData.nodes)
     .on("tick", tick) ;
 
 var svg = d3.select(".svg-container").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", function() {
+        if (window.innerWidth > 600) {
+            return width;
+        } else {
+            return 320;
+        }
+    })
+    .attr("height", function() {
+        if (window.innerWidth > 600) {
+            return height;
+        } else {
+            return 730;
+        }
+    });
 
 var defs = svg.append("defs");
 
@@ -209,7 +221,11 @@ function tick() {
 
   node
       .attr("transform", function(d) {
-        return "translate(" + d.x + "," + d.y + ")";
+        if (window.innerWidth > 600) {
+            return "translate(" + d.x + "," + d.y + ")";
+        } else {
+            return "translate(" + d.mobile_cx + "," + d.mobile_cy + ")";
+        }
       })
 }
 
