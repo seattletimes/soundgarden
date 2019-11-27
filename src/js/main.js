@@ -71,7 +71,7 @@ function filterByCategory(){
 }
 
 function catButton() {
-    if (this.classList.length == 1){
+    if (this.classList.length == 2){
       for(var x = 0; x < filterButtons.length; x++){
             filterButtons[x].classList.remove("checked");
             }

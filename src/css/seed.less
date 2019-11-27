@@ -1,5 +1,11 @@
 @import "seattletimes";
 
+@chris: #e41a1c;
+@kim: #377eb8;
+@hiro: #4daf4a;
+@ben: #984ea3;
+@matt: #ff7f00;
+
 .content {
   border-top: 1px solid @df-light-gray;
   border-bottom: 1px solid @df-light-gray;
@@ -109,8 +115,26 @@
         }
       }
       .checked {
-        opacity: .5;
         outline: 0;
+        color: white;
+        &.chris {
+          background-color: @chris;
+        }
+        &.kim {
+          background-color: @kim;
+        }
+        &.hiro {
+          background-color: @hiro;
+        }
+        &.ben {
+          background-color: @ben;
+        }
+        &.matt {
+          background-color: @matt;
+        }
+        .member-label-role {
+          color: white;
+        }
       }
     
     }
