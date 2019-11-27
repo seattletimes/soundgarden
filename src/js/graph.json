@@ -1,70 +1,108 @@
 {
    "nodes": [
    {"name": "Alice\nCooper", "group": 1, "member": [0] ,
-      "mobile_cx": 208.1, "mobile_cy": 299.4, "radius": 30 },
+      "mobile_cx": 196.1, "mobile_cy": 301.4, "radius": 30 },
    {"name": "Alice\nin Chains", "group": 1, "member":[0] ,
-      "mobile_cx": 113.4, "mobile_cy": 352.6, "radius": 33.5 },
+      "mobile_cx": 103.4, "mobile_cy": 352.6, "radius": 33.5 },
    {"name": "Alice\nMudgarden", "group": 1, "member":[0] ,
-      "mobile_cx": 167.1, "mobile_cy": 196.4, "radius": 42 },
+      "mobile_cx": 157.1, "mobile_cy": 196.4, "radius": 42 },
    {"name": "Ann\nWilson", "group": 1, "member":[0] ,
-      "mobile_cx": 179.1, "mobile_cy": 382.6, "radius": 30 },
+      "mobile_cx": 163.1, "mobile_cy": 387.6, "radius": 30 },
    {"name": "Audioslave", "group": 1, "member":[0] ,
-      "mobile_cx": 136.4, "mobile_cy": 277.4, "radius": 40 },
+      "mobile_cx": 126.5, "mobile_cy": 284, "radius": 40 },
    {"name": "Brandi\nCarlile", "group": 1, "member": [4],
-      "mobile_cx": 235.1, "mobile_cy": 231.6, "radius": 30},
+      "mobile_cx": 225.1, "mobile_cy": 231.6, "radius": 30},
    {"name": "Guns N'\nRoses", "group": 1, "member":[0] ,
-      "mobile_cx": 135.3, "mobile_cy": 617.8, "radius": 28 },
+      "mobile_cx": 126.5, "mobile_cy": 622, "radius": 28 },
    {"name": "Linkin Park", "group": 1, "member":[0] ,
-      "mobile_cx": 108.2, "mobile_cy": 111.7, "radius": 42 },
+      "mobile_cx": 99.5, "mobile_cy": 103.2, "radius": 42 },
    {"name": "Michael\nShrieve", "group": 1, "member":[0] ,
-      "mobile_cx": 239.1, "mobile_cy": 433.8, "radius": 32 },
+      "mobile_cx": 229.1, "mobile_cy": 433.8, "radius": 32 },
    {"name": "Pearl Jam", "group": 3, "member": [0, 1, 4]  ,
-      "mobile_cx": 57.8, "mobile_cy": 426.3, "radius": 50 },
+      "mobile_cx": 52.8, "mobile_cy": 426.3, "radius": 50 },
    {"name": "Peter\nFrampton", "group": 2, "member": [0, 4] ,
-      "mobile_cx": 196.2, "mobile_cy": 115.4, "radius": 42 },
+      "mobile_cx": 186.2, "mobile_cy": 115.4, "radius": 42 },
    {"name": "Ramones", "group": 2, "member": [0, 3]  ,
-      "mobile_cx": 216.9, "mobile_cy": 593.8, "radius": 42  },
+      "mobile_cx": 206.9, "mobile_cy": 593.8, "radius": 42  },
    {"name": "Screaming\nTrees", "group": 1, "member":[0] ,
-      "mobile_cx": 89.8, "mobile_cy": 185.5, "radius": 40 },   
+      "mobile_cx": 79.8, "mobile_cy": 185.5, "radius": 40 },   
    {"name": "Slash", "group": 1, "member":[0] ,
-      "mobile_cx": 282.2, "mobile_cy": 282, "radius": 30 },
+      "mobile_cx": 264.2, "mobile_cy": 287, "radius": 30 },
    {"name": "Temple of\nthe Dog", "group": 1 , "member":[0, 4] ,
-      "mobile_cx": 39.9, "mobile_cy": 601.2, "radius": 36 },
+      "mobile_cx": 36.9, "mobile_cy": 603.2, "radius": 36 },
    {"name": "Tom\nMorello", "group": 1, "member":[0] ,
-      "mobile_cx": 151.5, "mobile_cy": 43.7, "radius": 32 },
+      "mobile_cx": 141.5, "mobile_cy": 43.7, "radius": 32 },
    {"name": "Zac Brown\nBand", "group": 1, "member":[0] ,
-      "mobile_cx": 200.2, "mobile_cy": 491.6, "radius": 44}, 
-   {"name": "Johnny Cash", "group": 1, "member": [1]  ,
-      "mobile_cx": 43.8, "mobile_cy": 322.6 , "radius":47},
+      "mobile_cx": 191.2, "mobile_cy": 491.6, "radius": 44}, 
+   {"name": "Johnny\nCash", "group": 1, "member": [1]  ,
+      "mobile_cx": 38.3, "mobile_cy": 319.1 , "radius":47},
    {"name": "MC5", "group": 1, "member": [1] ,
-      "mobile_cx": 280.8, "mobile_cy": 101.6, "radius":30},
+      "mobile_cx": 264.1, "mobile_cy": 103.2, "radius":30},
    {"name": "Mother Love\nBone", "group": 1, "member": [1],
-      "mobile_cx": 177.5, "mobile_cy": 682.1, "radius": 45},
+      "mobile_cx": 157.5, "mobile_cy": 692.1, "radius": 45},
    {"name": "Probot", "group": 1, "member": [1]  ,
-      "mobile_cx": 37.3, "mobile_cy": 104.2, "radius": 30  },
+      "mobile_cx": 36.3, "mobile_cy": 133.2, "radius": 30  },
    {"name": "The Presidents of \nthe United States \nof America", "group": 1, "member": [1] ,
-      "mobile_cx": 261.6, "mobile_cy": 363.1, "radius": 66 },
+      "mobile_cx": 240.6, "mobile_cy": 363.1, "radius": 66 },
    {"name": "Wellwater\nConspiracy", "group": 3, "member": [1, 3, 4]  ,
-      "mobile_cx": 105.3, "mobile_cy": 532, "radius": 50 },
+      "mobile_cx": 95.3, "mobile_cy": 532, "radius": 50 },
    {"name": "Truly" , "group": 1, "member": [2] ,
-      "mobile_cx": 238.2, "mobile_cy": 41.2, "radius": 30 },
+      "mobile_cx": 228.2, "mobile_cy": 41.2, "radius": 30 },
    {"name": "Queens\nof the\nStone Age", "group": 2 , "member": [3, 4]  ,
-      "mobile_cx": 270.1, "mobile_cy": 676.8, "radius": 37  },
+      "mobile_cx": 250.1, "mobile_cy": 676.8, "radius": 37  },
    {"name": "Janet Weiss \n(Sleater-Kinney)", "group": 1, "member": [4]  ,
-      "mobile_cx": 57, "mobile_cy": 250.7, "radius": 62 },
+      "mobile_cx": 57, "mobile_cy": 252, "radius": 62 },
    {"name": "Santana", "group": 1, "member": [0] ,
-      "mobile_cx": 281.2, "mobile_cy": 173.1, "radius": 30},
+      "mobile_cx": 259.1, "mobile_cy": 173.1, "radius": 30},
    {"name": "Skin Yard", "group": 2 , "member": [0, 4] ,
-      "mobile_cx": 73.8, "mobile_cy": 676.5, "radius": 42},
+      "mobile_cx": 66.9, "mobile_cy": 681.8, "radius": 42},
    {"name": "Smashing\nPumpkins", "group": 1 , "member": [4],
-      "mobile_cx": 65, "mobile_cy": 38.9, "radius": 38},
+      "mobile_cx": 55, "mobile_cy": 38.9, "radius": 38},
    {"name": "Tony Iommi \n(Black\nSabbath)", "group": 1, "member": [4],
-      "mobile_cx": 265.9, "mobile_cy": 522.6, "radius": 62},
+      "mobile_cx": 255.9, "mobile_cy": 532.6, "radius": 62},
    {"name": "Mudhoney", "group": 1, "member": [0],
-      "mobile_cx": 145.4, "mobile_cy": 447.8, "radius": 38 }
+      "mobile_cx": 138.4, "mobile_cy": 449.8, "radius": 38 }
    ],
 
    "edges": [
    ]
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

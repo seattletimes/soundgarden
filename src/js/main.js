@@ -107,7 +107,7 @@ var svg = d3.select(".svg-container").append("svg")
         if (window.innerWidth > 600) {
             return width;
         } else {
-            return 320;
+            return 300;
         }
     })
     .attr("height", function() {
@@ -232,7 +232,7 @@ function tick() {
           if (window.innerWidth > 600) {
               return width;
           } else {
-              return 320;
+              return 300;
           }
       })
       .attr("height", function() {
