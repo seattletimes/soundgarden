@@ -121,22 +121,27 @@
 
 .footer {
   font-family: @df-sans;
-  font-size: 14px;
-  clear: both;
   color: @df-middle-gray;
   p {
     margin: 5px;
   }
   .source {
+    font-size: 14px;
     font-style: italic;
     @media (min-width: 400px) {
       float: left;
     }
   }
   .credit {
+    font-size: 13px;
     text-transform: uppercase;
     @media (min-width: 400px) {
       float: right;
     }
+  }
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
   }
 }

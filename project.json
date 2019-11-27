@@ -6,7 +6,7 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2019/music/linking-soundgarden"
     }
   },
   "title": "",
@@ -16,7 +16,6 @@
   "post_id": 0,
   "image": "assets/social.jpg",
   "sheets": [],
-  "standout": false,
   "embedded": true,
-  "production": false
+  "production": true
 }
