@@ -6,12 +6,12 @@ var d3 = require("d3");
 var bandData = require("./graph.json");
 
 var legendValues = [1, 2, 3],
-    legendLabels = ["1", "2", "Band worked with 3 Soundgarden members"],
+    legendLabels = ["<tspan class='bold'>1</tspan>", "<tspan class='bold'>2</tspan>", "<tspan class='bold'>3</tspan> Soundgarden members connected to the band"],
     legendHeight = 120,
-    legendWidth = 290;
+    legendWidth = 310;
 
 var scale = d3.scaleSqrt()
-    .domain([1, 3])
+    .domain([1, 3])  
     .range([30, 50]);
 
 var width = 600,
@@ -38,7 +38,7 @@ legend.selectAll("text")
     .data(legendLabels)
     .enter()
     .append("text")
-    .text(function(d) {return d})
+    .html(function(d) {return d})
     .attr("text-anchor", "middle")
     .attr("x", "50%")
     .attr("y", function(d, i) {
