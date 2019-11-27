@@ -1,7 +1,8 @@
 @import "seattletimes";
 
 .content {
-  border: 1px solid @df-light-gray;
+  border-top : 1px solid @df-light-gray;
+  border-bottom: 1px solid @df-light-gray;
 }
 
 .chatter{
@@ -12,10 +13,15 @@
   font-size: 15px;
 }
 
-#legend {
-  display: block;
-  margin: 10px auto;
+#legend{
+  width:250px;
+  margin: auto;
+  text{
+    font-family: @df-sans;
+  }
+
 }
+
 
 .chart-head {
   font-size: 28px;
