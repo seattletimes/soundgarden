@@ -1,7 +1,11 @@
 @import "seattletimes";
 
+.content {
+  border: 1px solid @df-light-gray;
+}
+
 .chatter{
-  padding: 0;
+  padding: 0 10px;
   max-width: 630px;
   margin: 14px auto;
   font-family: @df-sans;
@@ -49,8 +53,12 @@
   .filters {
     background-color: white;
     font-family: @df-sans;
-    padding: 10px 0 10px 0;
-
+    padding: 10px 0;
+    @media (max-width: 600px) {
+      padding: 0;
+      position: sticky;
+      top: 0;
+    }
     .categories {
       padding: 12px;
       margin: 0;
@@ -58,15 +66,20 @@
       display: block;
       text-align: center;
       background-color: white;
-
+      @media (max-width: 600px) {
+        padding: 2px;
+      }
       .member-label{
         display: inline-block;
         margin: 5px 0;
+        @media (max-width: 600px) {
+          margin: 2px 0;
+        }
       }
       .member-label-role{
         font-style: italic;
         color: #6e6e6e;
-        font-size: 15px;
+        font-size: 14px;
       }
       label {
         display: block;
@@ -81,8 +94,10 @@
         cursor: pointer;
         margin: 2px;
         font-size: 18px;
-
-
+        @media (max-width: 600px) {
+          font-size: 14px;
+          padding: 2px 4px;
+        }
       }
       .checked {
         opacity: .5;
